@@ -17,7 +17,7 @@
 - Enumerate the keys with `stats items` followed by `stats cachedump <slab id> 100` - more info https://stackoverflow.com/questions/19560150/get-all-keys-set-in-memcached
 - See that there are `user` and `passwd` keys. Fetch these values with `get user` and `get passwd`
 - This gives us the creds for luffy, `luffy:0n3_p1ec3`
-- Logging in as luffy and enumerating processes withas root via `/mnt/pwn/`, so we can cat the user and root flag `ps auxw` we can see there is a docker container running
-- This docker container has / mounted at /mnt/pwn
+- Logging in as luffy and enumerating processes with `ps auxw` we can see there is a docker container running
+- This docker container has `/` mounted at `/mnt/pwn` 
 - We get a shell in the docker with `docker exec -it <container id> /bin/bash` which drops us into a root shell
 - Now we can access all of the host filesystem as root via `/mnt/pwn/`, so we can cat the user and root flag
